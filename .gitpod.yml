@@ -2,7 +2,7 @@
 
 tasks:
   - name: Start Docker Compose
-    command: docker-compose -f docker/docker-compose.yml up
+    command: docker-compose -f docker/docker-compose.yaml up
 
 ports:
   - port: 8081
