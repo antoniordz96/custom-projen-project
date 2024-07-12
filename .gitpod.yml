@@ -2,7 +2,6 @@
 
 tasks:
   - name: Start Docker Compose
-    init: docker-compose -f docker/docker-compose.yml up --build
     command: docker-compose -f docker/docker-compose.yml up
 
 ports:
