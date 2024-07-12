@@ -2,16 +2,22 @@
 
 tasks:
   - name: Start Docker Compose
-    command: docker-compose -f docker/docker-compose.yaml up
-
+    command: docker-compose -f docker/docker-compose.yaml up -d
+  - name: Setup
+    command: npx projen build
+    init: yarn install
 ports:
   - port: 8081
-    onOpen: open-preview
+    onOpen: open-browser
+  - port: 8082
+    onOpen: open-browser
 
 vscode:
   extensions:
     - dbaeumer.vscode-eslint
     - esbenp.prettier-vscode
+    - ms-azuretools.vscode-docker
+    - MarkMcCulloh.vscode-projen
 
 # Optional: Specify the start script for your TypeScript app if you have one
 # command:
